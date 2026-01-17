@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Project 3 — Waqar Asghar</title>
+    <!-- ✅ Add the following JSON-LD below -->
+<link rel="canonical" href="https://cybersolutions.top/projects/project1.html" />
+
+<link rel="icon" type="image/png" href="/assets/images/favicon.ico.png" type="image/png">
+<link rel="icon" type="image/svg+xml" href="/assets/images/favicon.ico.png" type="image/png">
+<link rel="shortcut icon" href="/assets/images/favicon.ico.png" type="image/png">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicon.ico.png" type="image/png">
+<link rel="manifest" href="/assets/images/favicon.ico.png" type="image/png">
+
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+<div class="site">
+
+<aside class="sidebar">
+  <div class="profile-circle"><img src="../assets/images/waqar.png" alt="Profile"></div>
+  <h3 style="margin:6px 0 0">Waqar Asghar</h3>
+  <p style="color:var(--muted);margin:4px 0 12px;font-size:0.9rem">Cybersecurity & Cloud Professional</p>
+  <ul class="side-nav">
+    <li><a href="../index.html">Home</a></li>
+    <li><a href="../about.html">About</a></li>
+    <li><a href="../resume.html">Resume</a></li>
+    <li><a href="../tools-and-skills.html">Tools & Skills</a></li>
+    <li><a href="../projects.html" class="active">Projects</a></li>
+    <li><a href="../testimonials.html">Testimonials</a></li>
+    <li><a href="../contact.html">Contact</a></li>
+  </ul>
+<!-- Social Media Icons -->
+<div class="social-links" style="display:flex;gap:10px;justify-content:center;margin-bottom:12px;">
+  <a href="https://facebook.com/waqarasgharali" target="_blank" aria-label="Facebook">
+    <img src="../assets/icons/facebook.png" alt="Facebook" style="width:22px;height:22px;">
+  </a>
+  <a href="https://x.com/WaqarAsgharAli" target="_blank" aria-label="Twitter / X">
+    <img src="../assets/icons/twitter.png" alt="Twitter" style="width:22px;height:22px;">
+  </a>
+  <a href="https://www.linkedin.com/in/waqarasgharali" target="_blank" aria-label="LinkedIn">
+    <img src="../assets/icons/linkedin.png" alt="LinkedIn" style="width:22px;height:22px;">
+  </a>
+  <a href="https://github.com/waqarbinasgharali" target="_blank" aria-label="GitHub">
+    <img src="../assets/icons/github.png" alt="GitHub" style="width:22px;height:22px;">
+  </a>
+</div>
+</aside>
+
+<main class="content">
+<section class="section reveal">
+  <h2>DevSecOps: Secure CI/CD Pipeline</h2>
+  <img src="../assets/images/project3.png" alt="Project 3" style="max-width:100%;border-radius:12px;margin-bottom:20px">
+  <p style="color:var(--muted);font-size:1rem">
+    <h2>Project Description</h2>
+    <p>
+      Built a <strong>secure DevSecOps pipeline</strong> integrating <strong>Snyk</strong> and <strong>Trivy</strong> for vulnerability scanning,
+      along with <strong>IAM role-based policies</strong> and <strong>compliance checks</strong>. 
+      This ensured that every application deployment was both automated and security-compliant.
+    </p>
+
+    <h2>Tools & Technologies</h2>
+    <ul>
+      <li><strong>Version Control:</strong> GitHub</li>
+      <li><strong>CI/CD:</strong> Jenkins</li>
+      <li><strong>Containers:</strong> Docker</li>
+      <li><strong>Orchestration:</strong> Kubernetes</li>
+      <li><strong>Security:</strong> Snyk (dependency scans), Trivy (image scans)</li>
+      <li><strong>Access Control:</strong> IAM Role-based policies</li>
+      <li><strong>Compliance:</strong> Automated policy checks in pipeline</li>
+    </ul>
+
+    <h2>Workflow</h2>
+    <ol>
+      <li><strong>Code Commit</strong> → Developer pushes code to GitHub.</li>
+      <li><strong>Build Stage</strong> → Jenkins builds Docker image.</li>
+      <li><strong>Security Stage</strong>:
+        <ul>
+          <li>Snyk scans dependencies.</li>
+          <li>Trivy scans Docker image for CVEs.</li>
+        </ul>
+      </li>
+      <li><strong>IAM & Compliance</strong>:
+        <ul>
+          <li>IAM policies enforce least privilege.</li>
+          <li>Pipeline blocks deployments failing compliance rules.</li>
+        </ul>
+      </li>
+      <li><strong>Testing</strong> → Unit and integration tests.</li>
+      <li><strong>Deploy</strong> → Secure image deployed on Kubernetes.</li>
+      <li><strong>Monitor</strong> → Logs, metrics, and compliance alerts.</li>
+    </ol>
+
+    <h2>Key Achievements</h2>
+    <ul>
+      <li>Automated <strong>build, security, and compliance</strong> in a single pipeline.</li>
+      <li>Enforced <strong>least-privilege IAM policies</strong> across DevOps tools.</li>
+      <li>Prevented insecure builds by <strong>auto-blocking failed compliance checks</strong>.</li>
+      <li>Reduced deployment risks and improved overall <strong>security posture</strong>.</li>
+    </ul>
+
+
+
+  <a href="../projects.html" style="display:inline-block;margin-top:20px;color:var(--primary);text-decoration:none">← Back to Projects</a>
+</section>
+<div class="footer">© 2025 CyberSolutions.Top "All Rights Reserved"</div>
+</main>
+</div>
+<script src="../assets/js/script.js"></script>
+</body>
+</html>

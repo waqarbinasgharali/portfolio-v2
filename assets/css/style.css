@@ -1,0 +1,562 @@
+:root{
+  --bg:#0b0b0f;
+  --panel:#0f0f13;
+  --muted:#b9b6bf;
+  --text:#e9e7ee;
+  --accent:#7b2ff7; /* purple */
+  --accent-2:#b084ff;
+  --sidebar-width:260px;
+  --radius:12px;
+  --transition:300ms;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial;color:var(--text);background:linear-gradient(180deg,#070607 0%, #0b0b0f 100%);}
+
+/* Layout */
+.site{display:flex;min-height:100vh;}
+.sidebar{
+  width:var(--sidebar-width);
+  background:linear-gradient(180deg,#0b0b0f 0%, #121217 100%);
+  border-right:1px solid rgba(255,255,255,0.03);
+  padding:30px 18px;
+  display:flex;flex-direction:column;align-items:center;gap:18px;
+  position:sticky;top:0;height:100vh;
+}
+.profile-circle{width:120px;height:120px;border-radius:999px;overflow:hidden;border:6px solid rgba(123,47,247,0.12);box-shadow:0 6px 18px rgba(123,47,247,0.08)}
+.profile-circle img{width:100%;height:100%;object-fit:cover;display:block}
+
+/* Nav */
+.side-nav{list-style:none;padding:0;margin:10px 0 0;width:100%}
+.side-nav li{width:100%}
+.side-nav a{
+  display:block;padding:6px 16px;margin:6px auto;border-radius:8px;text-decoration:none;color:var(--muted);font-weight:700;
+  transition:all var(--transition);
+  width:100%;text-align:left;
+}
+.side-nav a:hover{color:var(--text);background:linear-gradient(90deg, rgba(123,47,247,0.08), rgba(176,124,255,0.03));transform:translateX(6px)}
+.side-nav a.active{color:var(--text);background:linear-gradient(90deg,var(--accent),var(--accent-2));box-shadow:0 10px 30px rgba(123,47,247,0.12)}
+
+/* content */
+.content{flex:1;padding:36px 48px;}
+
+/* hero like sample: left text, right circle image */
+.hero{display:flex;align-items:center;gap:30px;background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent);padding:28px;border-radius:12px;border:1px solid rgba(255,255,255,0.02);box-shadow:0 8px 30px rgba(0,0,0,0.6)}
+.hero-left{flex:1}
+.hero-title{font-size:2.6rem;margin:0 0 8px;letter-spacing:1px}
+.hero-sub{color:var(--muted);margin-bottom:18px;max-width:56ch}
+.hero-cta{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+
+.btn{background:linear-gradient(90deg,var(--accent),var(--accent-2));color:white;padding:10px 16px;border-radius:10px;text-decoration:none;font-weight:700;box-shadow:0 12px 30px rgba(123,47,247,0.12);transition:transform var(--transition), filter var(--transition)}
+.btn.secondary{background:transparent;border:1px solid rgba(255,255,255,0.04);color:var(--text)}
+.btn:hover{transform:translateY(-6px);filter:brightness(1.05)}
+
+/* hero right circular image */
+.hero-right{width:420px;display:flex;align-items:center;justify-content:center}
+.hero-right .big-circle{width:340px;height:340px;border-radius:999px;overflow:hidden;border:12px solid rgba(123,47,247,0.08);box-shadow:0 20px 60px rgba(0,0,0,0.6)}
+.hero-right img{width:100%;height:100%;object-fit:cover;display:block}
+
+/* sections */
+.section{margin-top:28px}
+.section h2{font-size:1.2rem;color:var(--accent-2);margin:0 0 12px}
+
+/* about layout mimicking sample: left column stats, right main content */
+.about-grid{display:grid;grid-template-columns:280px 1fr;gap:20px}
+.about-card{background:rgba(255,255,255,0.02);padding:18px;border-radius:10px;border:1px solid rgba(255,255,255,0.02)}
+.stats{display:flex;flex-direction:column;gap:12px}
+.stat{background:linear-gradient(90deg, rgba(123,47,247,0.06), rgba(176,124,255,0.02));padding:12px;border-radius:10px;text-align:center;font-weight:700}
+
+/* portfolio grid */
+.portfolio-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:12px}
+.portfolio-item{border-radius:10px;overflow:hidden;border:1px solid rgba(255,255,255,0.03);background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent);transition:transform var(--transition);cursor:pointer}
+.portfolio-item img{width:100%;height:200px;object-fit:cover;display:block}
+.portfolio-item:hover{transform:translateY(-8px);box-shadow:0 18px 40px rgba(123,47,247,0.08)}
+
+/* resume small sections */
+.resume-row{display:flex;gap:12px;flex-wrap:wrap}
+.resume-item{flex:1;min-width:220px;background:rgba(255,255,255,0.02);padding:14px;border-radius:10px}
+
+/* testimonials */
+.testimonial{padding:14px;border-radius:10px;background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.005));border:1px solid rgba(255,255,255,0.02)}
+.testimonials-grid {display: grid;gap: 12px;grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));}
+/* contact */
+.contact-info{display:flex;gap:12px;flex-wrap:wrap}
+.contact-box{background:rgba(255,255,255,0.02);padding:12px;border-radius:10px;min-width:180px}
+
+/* footer */
+.footer{margin-top:24px;font-size:0.6rem;color:var(--muted);text-align:center}
+
+/* responsiveness */
+@media(max-width:980px){
+  .hero{flex-direction:column}
+  .hero-right{width:100%}
+  .about-grid{grid-template-columns:1fr}
+  .portfolio-grid{grid-template-columns:repeat(2,1fr)}
+  .sidebar{position:relative;height:auto;width:100%;flex-direction:row;padding:14px;justify-content:space-between}
+  .site{flex-direction:column}
+  .content{padding:20px}
+}
+@media(max-width:520px){
+  .portfolio-grid{grid-template-columns:1fr}
+  .hero-title{font-size:1.6rem}
+}
+/* === Mobile Sidebar Fix === */
+@media (max-width: 768px) {
+  .sidebar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px 0;
+  }
+
+  .profile-circle {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 10px;
+  }
+
+  .profile-circle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid var(--accent-2);
+  }
+
+  .sidebar h3,
+  .sidebar p {
+    margin: 4px 0;
+  }
+
+  .side-nav {
+    margin-top: 16px;
+  }
+}
+
+/* === Social Links (FB, X, LinkedIn, GitHub) === */
+.social-links {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 18px;
+}
+
+.social-links a img {
+  width: 30px;
+  height: 30px;
+  filter: grayscale(100%) brightness(0.8);
+  transition: all 0.3s ease;
+}
+
+.social-links a:hover img {
+  filter: grayscale(0%) brightness(1.2) drop-shadow(0 0 8px rgba(123,47,247,0.4));
+  transform: scale(1.1);
+}
+/* === Blog Cards Styling === */
+.blogs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 18px;
+  margin-top: 18px;
+}
+
+.blog-card {
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.005));
+  border: 1px solid rgba(255,255,255,0.03);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.blog-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 40px rgba(123,47,247,0.12);
+}
+
+.blog-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+}
+
+.blog-content {
+  padding: 16px;
+}
+
+.blog-title {
+  font-size: 1.1rem;
+  margin: 0 0 8px;
+  color: var(--text);
+  font-weight: 700;
+}
+
+.blog-meta {
+  font-size: 0.8rem;
+  color: var(--muted);
+  margin-bottom: 10px;
+}
+
+.blog-desc {
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin-bottom: 14px;
+}
+
+.blog-readmore {
+  display: inline-block;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  color: white;
+  padding: 8px 14px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.85rem;
+  box-shadow: 0 8px 20px rgba(123,47,247,0.12);
+  transition: transform var(--transition), filter var(--transition);
+}
+
+.blog-readmore:hover {
+  transform: translateY(-4px);
+  filter: brightness(1.1);
+}
+/* 🔹 Remove default link styling across site */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* 🔹 Optional hover effect for better UX */
+a:hover {
+  color: #a855f7; /* Adjust for your purple theme */
+  text-decoration: none;
+}
+
+/* 🔹 Make portfolio items look like cards, not links */
+.portfolio-item {
+  display: block;
+  background: #111;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  color: #fff;
+}
+
+.portfolio-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 18px rgba(168, 85, 247, 0.3);
+}
+
+/* 🔹 Portfolio text adjustments */
+.portfolio-item h2 {
+  font-size: 1.1rem;
+  color: #e0e0e0;
+  margin: 0;
+}
+
+.portfolio-item p {
+  color: #aaa;
+  margin-top: 6px;
+  font-size: 0.9rem;
+}
+/* ====== GLOBAL LINK FIX ====== */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #a855f7;
+  text-decoration: none;
+}
+
+/* ====== TOOL ICON HOVER GLOW ====== */
+.skills-icons a img {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 12px;
+}
+
+.skills-icons a:hover img {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px rgba(168, 85, 247, 0.6);
+}
+
+/* ====== SECTION CARD HOVER LIKE BLOG/PROJECTS ====== */
+.about-card {
+  background: #111;
+  border-radius: 14px;
+  padding: 20px;
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+  transition: all 0.35s ease;
+}
+
+.about-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 25px rgba(168, 85, 247, 0.25);
+}
+
+/* ====== HEADER COLORS ====== */
+.resume-item h2 {
+  color: #a855f7;
+  margin-bottom: 12px;
+}
+
+.resume-item ul li {
+  color: #bdbdbd;
+  margin: 4px 0;
+  font-size: 0.92rem;
+}
+.resume-item ul li:hover {
+  color: #a855f7;
+}
+/* ====== FIX BLOG CARD LINKING ====== */
+.blog-card {
+  display: block;
+  background: #111;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  color: #fff;
+}
+/* ✅ Fix: Social icon size consistent across all pages */
+.social-links a img {
+  width: 28px !important;
+  height: 28px !important;
+  filter: grayscale(100%) brightness(0.8);
+  transition: all 0.3s ease;
+}
+/* ✅ Fix: Resume headings use accent color */
+.resume-item h2 {
+  color: var(--accent-2) !important;
+}
+.resume-item ul li:hover {
+  color: var(--accent-2) !important;
+}
+/* ✅ Fix: Blog cards clickable area */
+.blog-card {
+  display: block;
+} 
+/* ===========================================
+   💜 GLOBAL PURPLE GLOW HOVER EFFECT (2025)
+   =========================================== */
+
+/* Smooth transition for all text elements */
+body * {
+  transition: color 0.3s ease, text-shadow 0.3s ease, filter 0.3s ease, transform 0.3s ease;
+}
+
+/* Text Glow on Hover */
+h1:hover,
+h2:hover,
+h3:hover,
+h4:hover,
+h5:hover,
+h6:hover,
+p:hover,
+li:hover,
+ul:focus
+span:hover,
+a:hover,
+strong:hover,
+em:hover {
+  color: var(--accent-2);
+  text-shadow: 0 0 8px rgba(123, 47, 247, 0.6);
+}
+
+/* Icon & Image Glow (like skills icons, social icons, logos) */
+i:hover,
+img:hover,
+svg:hover {
+  filter: drop-shadow(0 0 10px rgba(123, 47, 247, 0.6));
+  transform: scale(1.05);
+}
+
+/* Optional – Make glow stronger for active links or buttons */
+a:hover,
+button:hover {
+  color: var(--accent-2);
+  text-shadow: 0 0 10px rgba(123, 47, 247, 0.7);
+}
+
+/* Keep readability in control sections (no overbright glow) */
+.hero-sub:hover,
+.blog-desc:hover,
+.contact-box p:hover {
+  color: var(--accent-2);
+  text-shadow: 0 0 6px rgba(123, 47, 247, 0.4);
+}
+/* === 💜 Global Purple Glow for All Cards & Icons === */
+.about-card:hover,
+.resume-item:hover,
+.contact-box:hover,
+.blog-card:hover,
+.portfolio-item:hover,
+.testimonial:hover,
+.skills-icons a:hover img {
+  transform: translateY(-6px);
+  box-shadow: 0 0 25px rgba(168, 85, 247, 0.3);
+  transition: all 0.35s ease;
+}
+
+/* === 💜 Text Glow on Hover Across the Site === */
+h1:hover, h2:hover, h3:hover, h4:hover, p:hover, li:hover, a:hover, span:hover {
+  color: #b084ff;
+  text-shadow: 0 0 8px rgba(176, 132, 255, 0.5);
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+/* Resume layout fix for Tools & Skills page */
+.resume-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px; /* space between cards */
+  margin-bottom: 24px;
+  justify-content: space-between;
+}
+
+.resume-item {
+  flex: 1 1 calc(50% - 24px); /* two cards per row */
+  background: var(--card-bg, #111);
+  padding: 16px 18px;
+  border-radius: 12px;
+  box-shadow: 0 0 6px rgba(128, 0, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+/* Responsive fix: one column on mobile */
+@media (max-width: 768px) {
+  .resume-item {
+    flex: 1 1 100%;
+  }
+}
+/* 💜 Elegant Thin Purple Border Glow */
+.card,
+.about-card,
+.project-card,
+.blog-card,
+.skill-card,
+.resume-item {
+  background: var(--card-bg, #111);
+  border-radius: 12px;
+  padding: 16px 18px;
+  box-shadow: 0 0 3px rgba(128, 0, 255, 0.25); /* thinner soft purple edge */
+  transition: all 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover Glow Effect (slightly enhanced on hover) */
+.card:hover,
+.about-card:hover,
+.project-card:hover,
+.blog-card:hover,
+.skill-card:hover,
+.resume-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 8px rgba(128, 0, 255, 0.5); /* light aura, not overpowering */
+}
+
+/* ====== FIX BLOGS Fonts style ====== */
+
+.blog-content {
+  font-family: "Segoe UI", Arial, sans-serif;
+  line-height: 1.7;
+  color: #e4e4e4;
+  background-color: #0d0d0d;
+  padding: 0;
+  margin: 0;
+}
+
+.blog-content header {
+  background-color: #1a1a1a;
+  color: #fff;
+  padding: 30px;
+  text-align: center;
+  border-bottom: 2px solid #6a0dad;
+}
+
+.blog-content main {
+  padding: 40px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.blog-content h1,
+.blog-content h2,
+.blog-content h3 {
+  color: #b380ff;
+}
+
+.blog-content h1 { font-size: 2em; margin-bottom: 15px; }
+.blog-content h2 { font-size: 1.6em; margin-top: 40px; }
+.blog-content h3 { font-size: 1.3em; margin-top: 25px; }
+
+.blog-content p { margin: 15px 0; }
+.blog-content ul,
+.blog-content ol { margin: 15px 0 15px 30px; }
+.blog-content li { margin-bottom: 8px; }
+.blog-content strong { color: #ffffff; }
+
+.blog-content blockquote {
+  background: #1e1e1e;
+  border-left: 4px solid #6a0dad;
+  padding: 15px 20px;
+  font-style: italic;
+  color: #ccc;
+  margin: 20px 0;
+}
+
+.blog-content hr {
+  border: 0;
+  border-top: 1px solid #333;
+  margin: 40px 0;
+}
+
+/* ===============================
+   🌙 LIGHT / DARK MODE TOGGLE BUTTON
+   =============================== */
+.theme-toggle {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  background: rgba(123, 47, 247, 0.1);
+  border: 1px solid rgba(123, 47, 247, 0.3);
+  color: var(--accent-2);
+  border-radius: 50%;
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px rgba(123,47,247,0.15);
+}
+
+.theme-toggle:hover {
+  background: rgba(123, 47, 247, 0.2);
+  transform: scale(1.1);
+  box-shadow: 0 0 15px rgba(176,132,255,0.4);
+}
+
+/* optional: icon inside the button (sun/moon emoji or SVG) */
+.theme-toggle svg {
+  width: 20px;
+  height: 20px;
+  fill: var(--accent-2);
+  transition: fill 0.3s ease;
+}
+
+.theme-toggle:hover svg {
+  fill: var(--accent);
+}
+
+/* Light mode overrides */
+body.light-mode {
+  --bg: #f8f8ff;
+  --panel: #ffffff;
+  --text: #111;
+  --muted: #555;
+  --accent: #7b2ff7;
+  --accent-2: #a86bff;
+  background: linear-gradient(180deg, #ffffff 0%, #f2f2ff 100%);
+}

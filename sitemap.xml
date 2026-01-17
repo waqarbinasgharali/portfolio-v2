@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset 
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 
+  http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+
+  <!-- === Main Pages === -->
+  <url>
+    <loc>https://cybersolutions.top/</loc>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://cybersolutions.top/about.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://cybersolutions.top/resume.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://cybersolutions.top/tools-and-skills.html</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://cybersolutions.top/projects.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://cybersolutions.top/blogs.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://cybersolutions.top/testimonials.html</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://cybersolutions.top/contact.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- === Project Subpages === -->
+  <url>
+    <loc>https://cybersolutions.top/projects/project1.html</loc>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://cybersolutions.top/projects/project2.html</loc>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://cybersolutions.top/projects/project3.html</loc>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://cybersolutions.top/projects/project4.html</loc>
+    <priority>0.7</priority>
+  </url>
+
+   <url>
+    <loc>https://cybersolutions.top/projects/project5.html</loc>
+    <priority>0.7</priority>
+  </url>
+
+   <url>
+    <loc>https://cybersolutions.top/projects/project6.html</loc>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- === Blogs Subpages === -->
+  <url>
+    <loc>https://cybersolutions.top/blogs/automation-in-incident-response.html</loc>
+    <priority>0.85</priority>
+  </url>
+
+</urlset>
